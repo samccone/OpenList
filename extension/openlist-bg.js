@@ -7,3 +7,15 @@ chrome.runtime.onInstalled.addListener(function(details) {
         }
     });
 });
+
+function createTab(url) {
+  chrome.tabs.create({'url': 'https://google.com', 'selected':false}, function(tab) {
+    if (!/^htt/.test(url)) {
+      url = 'http://' + url;
+    }
+
+    console.log(url)
+
+    chrome.tabs.executeScript(tab.id, {code: 'window.location="' + url + '"'});
+  });
+}

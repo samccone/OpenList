@@ -6,13 +6,13 @@
   "description": "Utilities to create and open lists of tabs.",
   "background": {
     "page": "background.html",
-    "persistent": false
+    "persistent": true
   },
   "homepage_url": "https://github.com/cdzombak/OpenList",
   "permissions": [
     "contextMenus",
-    "tabs"
-  ],
+    "tabs",
+    "https://*/*"  ],
   "browser_action": {
     "default_icon":  "icon/icon-48.png",
     "default_title": "Tab List",
